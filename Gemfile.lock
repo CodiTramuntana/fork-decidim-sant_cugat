@@ -133,13 +133,6 @@ GIT
       rectify (~> 0.8.0)
       sassc-rails (~> 1.3.0)
 
-GIT
-  remote: https://github.com/codegram/decidim-deploy-heroku.git
-  revision: d5868d467f689cef4cc1a1321426371d8759fa1d
-  specs:
-    decidim-deploy-heroku (0.0.1)
-      decidim (= 0.0.6)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -611,7 +604,6 @@ DEPENDENCIES
   byebug
   dalli
   decidim!
-  decidim-deploy-heroku!
   decidim-dev!
   faker (~> 1.7.3)
   fog-aws
