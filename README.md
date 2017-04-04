@@ -1,6 +1,6 @@
 # decidim_sant_cugat
 
-Citizen Participation and Open Govermnment application.
+Citizen Participation and Open Government application.
 
 This is the open-source repository for decidim_sant_cugat, based on [Decidim](https://github.com/AjuntamentdeBarcelona/decidim).
 
