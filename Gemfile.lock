@@ -603,6 +603,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   dalli
+  database_cleaner
   decidim!
   decidim-dev!
   faker (~> 1.7.3)
@@ -611,6 +612,7 @@ DEPENDENCIES
   lograge
   newrelic_rpm
   passenger
+  rspec-rails
   sendgrid-ruby
   sentry-raven
   sidekiq

@@ -6,7 +6,7 @@ Decidim.configure do |config|
   config.authorization_handlers = [ExampleAuthorizationHandler]
 
   # Uncomment this lines to set your preferred locales
-  # config.available_locales = %i{en ca es}
+  config.available_locales = %i{ca}
 
   # Geocoder configuration
   # config.geocoder = {
@@ -16,7 +16,7 @@ Decidim.configure do |config|
   # }
 
   # Currency unit
-  # config.currency_unit = "€"
+  config.currency_unit = "€"
 
   # The number of reports which an object can receive before hiding it
   # config.max_reports_before_hiding = 3
