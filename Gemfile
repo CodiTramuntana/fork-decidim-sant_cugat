@@ -4,8 +4,8 @@ ruby '2.4.1'
 
 gem "decidim"
 
-gem 'uglifier', '>= 1.3.0'
-gem 'faker', '~> 1.7.3'
+gem 'uglifier'
+gem 'faker'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -14,9 +14,9 @@ end
 
 group :development do
   gem 'web-console'
-  gem 'listen', '~> 3.1.0'
+  gem 'listen'
   gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'spring-watcher-listen'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
