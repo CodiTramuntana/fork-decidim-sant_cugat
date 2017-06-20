@@ -13,7 +13,6 @@ group :development, :test do
 end
 
 group :development do
-  gem 'web-console'
   gem 'listen'
   gem 'spring'
   gem 'spring-watcher-listen'
@@ -31,9 +30,4 @@ group :production do
   gem 'lograge'
   gem 'sentry-raven'
   gem 'sidekiq'
-end
-
-group :test do
-  gem "rspec-rails"
-  gem "database_cleaner"
 end
