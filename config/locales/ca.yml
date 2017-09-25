@@ -1,0 +1,3 @@
+ca:
+  census_authorization_handler:
+    age_under_16: Has de ser major de 16 anys per validar-te

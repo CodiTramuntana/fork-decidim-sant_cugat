@@ -17,6 +17,23 @@ describe CensusAuthorizationHandler do
 
   it_behaves_like "an authorization handler"
 
+  context "when user is too young" do
+    let(:date_of_birth) { 15.years.ago.to_date }
+
+    before do
+      allow(handler)
+        .to receive(:response)
+              .and_return(JSON.parse("{ \"res\": 1 }"))
+    end
+
+    it { is_expected.not_to be_valid }
+
+    it "has an error in the date of birth" do
+      subject.valid?
+      expect(subject.errors[:date_of_birth]).to be_present
+    end
+  end
+
   context "with a valid response" do
     before do
       allow(handler)
