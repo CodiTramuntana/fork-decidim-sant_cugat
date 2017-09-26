@@ -1,4 +1,3 @@
-# coding: utf-8
 # frozen_string_literal: true
 require "rails_helper"
 require "decidim/dev/test/authorization_shared_examples"

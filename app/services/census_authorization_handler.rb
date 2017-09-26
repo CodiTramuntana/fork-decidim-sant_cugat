@@ -1,7 +1,8 @@
 # frozen_string_literal: true
-# Checks the authorization against the census for Badalona.
 require "digest/md5"
 
+# Checks the authorization against the census for Sant Cugat.
+#
 # This class performs a check against the official census database in order
 # to verify the citizen's residence.
 class CensusAuthorizationHandler < Decidim::AuthorizationHandler
@@ -13,8 +14,8 @@ class CensusAuthorizationHandler < Decidim::AuthorizationHandler
   validates :date_of_birth, presence: true
   validates :document_number, format: { with: /\A[A-z0-9]*\z/ }, presence: true
 
-  validate :check_response
   validate :over_16
+  validate :check_response
 
   # If you need to store any of the defined attributes in the authorization you
   # can do it here.
