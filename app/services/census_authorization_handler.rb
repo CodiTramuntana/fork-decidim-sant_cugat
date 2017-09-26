@@ -14,7 +14,7 @@ class CensusAuthorizationHandler < Decidim::AuthorizationHandler
   validates :date_of_birth, presence: true
   validates :document_number, format: { with: /\A[A-z0-9]*\z/ }, presence: true
 
-  validate :over_16
+  validate :over_14
   validate :check_response
 
   # If you need to store any of the defined attributes in the authorization you
@@ -69,8 +69,8 @@ class CensusAuthorizationHandler < Decidim::AuthorizationHandler
     }
   end
 
-  def over_16
-    errors.add(:date_of_birth, I18n.t("census_authorization_handler.age_under_16")) unless age && age >= 16
+  def over_14
+    errors.add(:date_of_birth, I18n.t("census_authorization_handler.age_under_14")) unless age && age >= 14
   end
 
   def age

@@ -5,7 +5,7 @@ ca:
         date_of_birth: Data de naixement
         document_number: Número de document
   census_authorization_handler:
-    age_under_16: Has de ser major de 16 anys per validar-te
+    age_under_14: Has de ser major de 14 anys per validar-te
   decidim:
     authorization_handlers:
       census_authorization_handler:

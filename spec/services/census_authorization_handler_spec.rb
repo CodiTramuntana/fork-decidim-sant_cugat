@@ -17,7 +17,7 @@ describe CensusAuthorizationHandler do
   it_behaves_like "an authorization handler"
 
   context "when user is too young" do
-    let(:date_of_birth) { 15.years.ago.to_date }
+    let(:date_of_birth) { 13.years.ago.to_date }
 
     before do
       allow(handler)
