@@ -3,6 +3,7 @@ source "https://rubygems.org"
 ruby '2.4.2'
 
 gem "decidim", git: "https://github.com/decidim/decidim"
+gem "decidim-assemblies", git: "https://github.com/decidim/decidim"
 
 gem 'uglifier'
 gem 'faker'

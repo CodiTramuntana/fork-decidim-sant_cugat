@@ -35,6 +35,8 @@ GIT
       graphql (~> 1.6.0)
       rack-cors (~> 1.0.1)
       sprockets-es6 (~> 0.9.2)
+    decidim-assemblies (0.7.0.pre.pre)
+      decidim-core (= 0.7.0.pre.pre)
     decidim-budgets (0.7.0.pre.pre)
       decidim-comments (= 0.7.0.pre.pre)
       decidim-core (= 0.7.0.pre.pre)
@@ -609,6 +611,7 @@ DEPENDENCIES
   dalli
   database_cleaner
   decidim!
+  decidim-assemblies!
   decidim-dev!
   faker
   fog-aws
