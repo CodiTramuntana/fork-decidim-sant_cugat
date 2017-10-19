@@ -3,7 +3,7 @@
 Decidim.configure do |config|
   config.application_name = "Decidim Sant Cugat"
   config.mailer_sender    = "participacio@santcugat.cat"
-  config.authorization_handlers = [CensusAuthorizationHandler]
+  config.authorization_handlers = ["CensusAuthorizationHandler"]
   config.maximum_attachment_size = 100.megabytes
 
   # Uncomment this lines to set your preferred locales
