@@ -5,24 +5,21 @@ require "spec_helper"
 describe "Authorizations", type: :feature, perform_enqueued: true do
   let(:organization) { create :organization, available_authorizations: authorizations }
   let(:authorizations) { ["CensusAuthorizationHandler"] }
+  let(:response) do
+    JSON.parse("{ \"res\": 1 }")
+  end
 
   # Selects a birth date that will not cause errors in the form: January 12, 1979.
   def fill_in_authorization_form
-    page.execute_script("$('#date_field_authorization_handler_date_of_birth').focus()")
-    page.find(".datepicker-dropdown .datepicker-days .date-switch").click
-    page.find(".datepicker-dropdown .datepicker-months .date-switch").click
-    page.find(".datepicker-dropdown .datepicker-years .prev").click
-    page.find(".datepicker-dropdown .datepicker-years .prev").click
-    page.find(".datepicker-dropdown .datepicker-years .prev").click
-    page.find(".datepicker-dropdown .year:first-child").click
-    page.find(".datepicker-dropdown .month:first-child").click
-    page.find(".datepicker-dropdown .day", text: "12").click
-    fill_in "Número de document", with: "12345678A"
+    fill_in "authorization_handler_document_number", with: "12345678A"
+    select "12", from: "authorization_handler_date_of_birth_3i"
+    select "January", from: "authorization_handler_date_of_birth_2i"
+    select "1979", from: "authorization_handler_date_of_birth_1i"
   end
 
   before do
     Decidim.authorization_handlers = [CensusAuthorizationHandler]
-    allow_any_instance_of(CensusAuthorizationHandler).to receive(:response).and_return(JSON.parse("{ \"res\": 1 }"))
+    allow_any_instance_of(CensusAuthorizationHandler).to receive(:response).and_return(response)
     switch_to_host(organization.host)
   end
 
