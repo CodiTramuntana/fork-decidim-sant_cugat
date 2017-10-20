@@ -42,7 +42,6 @@ describe "Authorizations", type: :feature, perform_enqueued: true do
         fill_in_authorization_form
         click_button "Send"
         expect(page).to have_content("successfully")
-        expect(page).to have_content("blabjekfha")
       end
 
       it "allows the user to skip it" do
