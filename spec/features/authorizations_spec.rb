@@ -18,7 +18,7 @@ describe "Authorizations", type: :feature, perform_enqueued: true do
   end
 
   before do
-    Decidim.authorization_handlers = [CensusAuthorizationHandler]
+    Decidim.authorization_handlers = ["CensusAuthorizationHandler"]
     allow_any_instance_of(CensusAuthorizationHandler).to receive(:response).and_return(response)
     switch_to_host(organization.host)
   end
@@ -46,7 +46,7 @@ describe "Authorizations", type: :feature, perform_enqueued: true do
 
       it "allows the user to skip it" do
         find(".skip a").click
-        expect(page).to have_content("Welcome")
+        expect(page).to have_content("User settings")
       end
     end
   end
