@@ -5,6 +5,8 @@ ruby '2.4.2'
 gem "decidim", git: "https://github.com/decidim/decidim", branch: "master"
 gem "decidim-assemblies", git: "https://github.com/decidim/decidim", branch: "master"
 
+gem "virtus-multiparams"
+
 gem 'uglifier'
 gem 'faker'
 
