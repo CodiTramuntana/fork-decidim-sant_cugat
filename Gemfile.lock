@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/decidim/decidim
-  revision: 7132d10452552e6a3f1cbcd56fda293bd285a9b3
+  revision: 61f1ba59952097b0605133075f861413f756dcda
   branch: 0.7-stable
   specs:
     decidim (0.7.1)
@@ -229,7 +229,7 @@ GEM
     css_parser (1.6.0)
       addressable
     dalli (2.7.6)
-    database_cleaner (1.6.1)
+    database_cleaner (1.6.2)
     date_validator (0.9.0)
       activemodel
       activesupport
@@ -310,7 +310,7 @@ GEM
     htmlentities (4.3.4)
     httparty (0.15.6)
       multi_xml (>= 0.5.2)
-    i18n (0.9.0)
+    i18n (0.9.1)
       concurrent-ruby (~> 1.0)
     i18n-tasks (0.9.18)
       activesupport (>= 4.0.2)
@@ -464,7 +464,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rainbow (2.2.2)
       rake
-    rake (12.1.0)
+    rake (12.2.1)
     rb-fsevent (0.10.2)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
@@ -583,7 +583,7 @@ GEM
     truncato (0.7.10)
       htmlentities (~> 4.3.1)
       nokogiri (~> 1.8.0, >= 1.7.0)
-    tzinfo (1.2.3)
+    tzinfo (1.2.4)
       thread_safe (~> 0.1)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
