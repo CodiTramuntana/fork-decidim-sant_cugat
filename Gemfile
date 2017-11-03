@@ -2,8 +2,8 @@ source "https://rubygems.org"
 
 ruby '2.4.2'
 
-gem "decidim", git: "https://github.com/decidim/decidim", branch: "master"
-gem "decidim-assemblies", git: "https://github.com/decidim/decidim", branch: "master"
+gem "decidim", git: "https://github.com/decidim/decidim", branch: "0.7-stable"
+gem "decidim-assemblies", git: "https://github.com/decidim/decidim", branch: "0.7-stable"
 
 gem "virtus-multiparams"
 
@@ -12,7 +12,7 @@ gem 'faker'
 
 group :development, :test do
   gem 'byebug', platform: :mri
-  gem "decidim-dev", git: "https://github.com/decidim/decidim", branch: "master"
+  gem "decidim-dev", git: "https://github.com/decidim/decidim", branch: "0.7-stable"
 end
 
 group :development do
