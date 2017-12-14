@@ -3,7 +3,6 @@
 Decidim.configure do |config|
   config.application_name = "Decidim Sant Cugat"
   config.mailer_sender    = "participacio@santcugat.cat"
-  config.authorization_handlers = ["CensusAuthorizationHandler"]
   config.maximum_attachment_size = 100.megabytes
 
   # Uncomment this lines to set your preferred locales
@@ -25,4 +24,8 @@ Decidim.configure do |config|
   if ENV["HEROKU_APP_NAME"].present?
     config.base_uploads_path = ENV["HEROKU_APP_NAME"] + "/"
   end
+end
+
+Decidim::Verifications.register_workflow(:census_authorization_handler) do |auth|
+  auth.form = "CensusAuthorizationHandler"
 end
