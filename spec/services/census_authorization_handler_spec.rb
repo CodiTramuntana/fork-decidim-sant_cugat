@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # frozen_string_literal: true
 require "rails_helper"
 require "decidim/dev/test/authorization_shared_examples"
@@ -13,8 +14,6 @@ describe CensusAuthorizationHandler do
       document_number: document_number
     }
   end
-
-  it_behaves_like "an authorization handler"
 
   context "when user is too young" do
     let(:date_of_birth) { 13.years.ago.to_date }
@@ -37,7 +36,19 @@ describe CensusAuthorizationHandler do
     before do
       allow(handler)
         .to receive(:response)
-        .and_return(JSON.parse("{ \"res\": 1 }"))
+        .and_return(JSON.parse("{ \"res\": 1, \"distrito\":\"2\",\"seccionCensal\":\"1\" }"))
+    end
+
+    it_behaves_like "an authorization handler"
+
+    describe "metadata" do
+      it "includes the district" do
+        expect(handler.metadata[:district]).to eq("2")
+      end
+
+      it "includes the census section" do
+        expect(handler.metadata[:census_section]).to eq("1")
+      end
     end
 
     describe "document_number" do
