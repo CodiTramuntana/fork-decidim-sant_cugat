@@ -24,7 +24,10 @@ class CensusAuthorizationHandler < Decidim::AuthorizationHandler
   # You must return a Hash that will be serialized to the authorization when
   # it's created, and available though authorization.metadata
   def metadata
-    super
+    {
+      district: response["distrito"],
+      census_section: response["seccionCensal"]
+    }
   end
 
   def unique_id
