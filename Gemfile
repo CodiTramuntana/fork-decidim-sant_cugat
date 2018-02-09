@@ -1,9 +1,8 @@
 source "https://rubygems.org"
 
-ruby '2.4.2'
+ruby '2.5.0'
 
-gem "decidim", "~>0.8.2"
-gem "decidim-assemblies", "~>0.8.2"
+gem "decidim", "~>0.9.2"
 
 gem "virtus-multiparams"
 
@@ -12,7 +11,7 @@ gem 'faker'
 
 group :development, :test do
   gem 'byebug', platform: :mri
-  gem "decidim-dev", "~>0.8.2"
+  gem "decidim-dev"
 end
 
 group :development do
