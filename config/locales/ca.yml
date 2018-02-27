@@ -3,6 +3,7 @@ ca:
     attributes:
       census_authorization_handler:
         date_of_birth: Data de naixement
+        district: Barri
         document_number: Número de DNI
   census_authorization:
     form:
