@@ -23,7 +23,8 @@ ca:
           document_number: Número de document
     shared:
       action_authorization_modal:
-        authorize: Torna't a autoritzar amb el padró municipal
+        expired:
+          authorize: Torna't a autoritzar amb el padró municipal
           explanation: La teva autorització ha caducat. Per realitzar aquesta acció, has de tornar a autoritzar-te amb el padró municipal.
         incomplete:
           cancel: Cancel·lar
