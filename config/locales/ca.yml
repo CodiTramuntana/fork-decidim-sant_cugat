@@ -3,7 +3,7 @@ ca:
     attributes:
       census_authorization_handler:
         date_of_birth: Data de naixement
-        district: Barri
+        district: Districte d'empadronament
         document_number: Número de DNI
   census_authorization:
     form:
@@ -16,8 +16,24 @@ ca:
   decidim:
     authorization_handlers:
       census_authorization_handler:
-        explanation: Verifica't amb el padró
-        name: El padró
+        explanation: Verifica't amb el padró municipal
+        name: El padró municipal
         fields:
           date_of_birth: Data de naixement
           document_number: Número de document
+    shared:
+      action_authorization_modal:
+        authorize: Torna't a autoritzar amb el padró municipal
+          explanation: La teva autorització ha caducat. Per realitzar aquesta acció, has de tornar a autoritzar-te amb el padró municipal.
+        incomplete:
+          cancel: Cancel·lar
+          explanation: 'Tot i que actualment estàs autoritzat amb el padró municipal, necessitem que et tornis a autoritzar perquè no tenim les dades següents:'
+        missing:
+          authorize: Autoritzar amb el padró municipal
+          explanation: Per dur a terme aquesta acció, has d'estar autoritzat/da amb el padró municipal.
+        unauthorized:
+          invalid_field: "%{field} no és correcte"
+  devise:
+    failure:
+      user:
+        invalid: L'usuari no és vàlid
