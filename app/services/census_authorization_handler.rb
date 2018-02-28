@@ -64,6 +64,8 @@ class CensusAuthorizationHandler < Decidim::AuthorizationHandler
     end
 
     @response ||= JSON.parse(response.body)
+  rescue JSON::ParserError => _exception
+    nil
   end
 
   def request_params

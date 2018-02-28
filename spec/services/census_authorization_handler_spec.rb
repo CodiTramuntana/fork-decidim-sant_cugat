@@ -117,5 +117,15 @@ describe CensusAuthorizationHandler do
 
       it { is_expected.to_not be_valid }
     end
+
+    context "with an invalid json format" do
+      before do
+        allow(handler)
+          .to receive(:response)
+          .and_return("</not valid json>")
+      end
+
+      it { is_expected.to_not be_valid }
+    end
   end
 end
