@@ -21,6 +21,7 @@ ca:
         fields:
           date_of_birth: Data de naixement
           document_number: Número de document
+          district: Districte
     shared:
       action_authorization_modal:
         expired:
