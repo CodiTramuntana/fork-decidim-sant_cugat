@@ -15,6 +15,38 @@ describe CensusAuthorizationHandler do
     }
   end
 
+  describe "document_number" do
+    context "when it is present" do
+      let(:document_number) { "12345678a" }
+
+      it "returns it in upper case" do
+        expect(subject.document_number).to eq("12345678A")
+      end
+    end
+
+    context "when it is nil" do
+      let(:document_number) { nil }
+
+      it "returns nil" do
+        expect(subject.document_number).to eq(nil)
+      end
+    end
+
+    context "with a NIE" do
+      let(:document_number) { "Z1234567R" }
+
+      before do
+        allow(handler)
+          .to receive(:response)
+          .and_return(JSON.parse("{ \"res\": 1 }"))
+      end
+
+      it "is valid" do
+        expect(subject).to be_valid
+      end
+    end
+  end
+
   context "when user is too young" do
     let(:date_of_birth) { 13.years.ago.to_date }
 
