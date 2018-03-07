@@ -18,6 +18,12 @@ class CensusAuthorizationHandler < Decidim::AuthorizationHandler
   validate :over_14
   validate :check_response
 
+  def document_number
+    return unless super
+
+    super.to_s.upcase
+  end
+
   # If you need to store any of the defined attributes in the authorization you
   # can do it here.
   #
