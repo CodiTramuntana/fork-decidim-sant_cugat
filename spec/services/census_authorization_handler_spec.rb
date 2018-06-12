@@ -8,8 +8,10 @@ describe CensusAuthorizationHandler do
   let(:handler) { described_class.from_params(params) }
   let(:date_of_birth) { Date.civil(1987, 9, 17) }
   let(:document_number) { "12345678A" }
+  let(:user) { create :user }
   let(:params) do
     {
+      user: user,
       date_of_birth: date_of_birth,
       document_number: document_number
     }
