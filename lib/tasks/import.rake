@@ -7,6 +7,8 @@ namespace :projects do
     errors = {}
     successes = {}
 
+    ActiveRecord::Base.logger = nil
+
     ActiveRecord::Base.transaction do
       CSV.foreach(File.expand_path(args[:file]), headers: true) do |row|
         row = row.to_hash
