@@ -62,6 +62,8 @@ namespace :projects do
   end
 
   def vote_projects(user, component_id, project_references)
+    raise 'Order existing' if Decidim::Budgets::Order.where(user: user, component_id: component_id).exists?
+
     order = Decidim::Budgets::Order.create!(
       user: user,
       component: Decidim::Component.find(component_id)
