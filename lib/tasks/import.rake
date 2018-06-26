@@ -12,6 +12,7 @@ namespace :projects do
     ActiveRecord::Base.transaction do
       CSV.foreach(File.expand_path(args[:file]), headers: true) do |row|
         row = row.to_hash
+        puts "Processing #{row['DNI']}"
 
         handler = CensusAuthorizationHandler.new(
           document_number: row['DNI'],
@@ -23,6 +24,7 @@ namespace :projects do
         ).first
 
         user = if authorization
+                 puts "User found for #{row['DNI']}: #{authorization.user.id}"
                  authorization.user
                else
                  user = create_managed_user(row['DNI'])
