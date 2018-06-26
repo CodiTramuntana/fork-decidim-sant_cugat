@@ -9,46 +9,43 @@ namespace :projects do
 
     ActiveRecord::Base.logger = nil
 
-    ActiveRecord::Base.transaction do
-      CSV.foreach(File.expand_path(args[:file]), headers: true) do |row|
-        row = row.to_hash
-        puts "Processing #{row['DNI']}"
+    CSV.foreach(File.expand_path(args[:file]), headers: true) do |row|
+      row = row.to_hash
+      puts "Processing #{row['DNI']}"
 
-        handler = CensusAuthorizationHandler.new(
-          document_number: row['DNI'],
-          date_of_birth: Date.strptime(row['Data de naixement'], '%m/%d/%y')
-        )
+      handler = CensusAuthorizationHandler.new(
+        document_number: row['DNI'],
+        date_of_birth: Date.strptime(row['Data de naixement'], '%m/%d/%y')
+      )
 
-        authorization = Decidim::Authorization.where(
-          unique_id: handler.unique_id
-        ).first
+      authorization = Decidim::Authorization.where(
+        unique_id: handler.unique_id
+      ).first
 
-        user = if authorization
-                 puts "User found for #{row['DNI']}: #{authorization.user.id}"
-                 authorization.user
-               else
-                 user = create_managed_user(row['DNI'])
-                 handler.user = user
-                 Decidim::Authorization.create_or_update_from(handler)
-                 user
-              end
-        city_projects = (1..5).to_a.map { |i| row["Projecte Ciutat #{i}"] }.compact
-        vote_projects(user, 44, city_projects) if city_projects.any?
-        area_projects = (1..5).to_a.map { |i| row["Projecte Barri #{i}"] }.compact
-        vote_projects(user, 45, area_projects) if area_projects.any?
+      user = if authorization
+               puts "User found for #{row['DNI']}: #{authorization.user.id}"
+               authorization.user
+             else
+               user = create_managed_user(row['DNI'])
+               handler.user = user
+               Decidim::Authorization.create_or_update_from(handler)
+               user
+            end
+      city_projects = (1..5).to_a.map { |i| row["Projecte Ciutat #{i}"] }.compact
+      vote_projects(user, 44, city_projects) if city_projects.any?
+      area_projects = (1..5).to_a.map { |i| row["Projecte Barri #{i}"] }.compact
+      vote_projects(user, 45, area_projects) if area_projects.any?
 
-        successes[row['DNI']] = [city_projects, area_projects]
-        puts "Successfully processed: #{row['DNI']}"
+      successes[row['DNI']] = [city_projects, area_projects]
+      puts "Successfully processed: #{row['DNI']}"
 
-      rescue StandardError => e
-        errors[row['DNI']] = e
-        puts "Error processing: #{row['DNI']} - #{e}"
-      end
-
-      puts "#{successes.keys.length} successes"
-      puts "#{errors.keys.length} errors"
-      raise 'Exit'
+    rescue StandardError => e
+      errors[row['DNI']] = e
+      puts "Error processing: #{row['DNI']} - #{e}"
     end
+
+    puts "#{successes.keys.length} successes"
+    puts "#{errors.keys.length} errors"
   end
 
   def create_managed_user(dni)
