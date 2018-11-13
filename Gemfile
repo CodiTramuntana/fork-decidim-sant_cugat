@@ -1,8 +1,8 @@
 source "https://rubygems.org"
 
-ruby '2.5.0'
+ruby '2.5.3'
 
-gem "decidim", "~> 0.13.1"
+gem "decidim", "~> 0.15.0"
 
 gem "virtus-multiparams"
 
