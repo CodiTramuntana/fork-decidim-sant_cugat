@@ -8,11 +8,11 @@ gem "virtus-multiparams"
 
 gem 'uglifier'
 gem 'faker'
+gem "puma"
 
 group :development, :test do
   gem 'byebug', platform: :mri
   gem "decidim-dev"
-  gem "puma"
 end
 
 group :development do
