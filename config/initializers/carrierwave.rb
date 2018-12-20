@@ -23,7 +23,7 @@ if Rails.application.secrets.aws_access_key_id.present?
       region:                'eu-central-1',                                       # optional, defaults to 'us-east-1'
       host:                  's3.eu-central-1.amazonaws.com',                                  # optional, defaults to nil
     }
-    config.fog_directory  = 'decidim-santcugat'                                # required
+    config.fog_directory  = Rails.application.secrets.aws_bucket
     config.fog_attributes = { 'Cache-Control' => "max-age=#{365.day.to_i}" }    # optional, defaults to {}
   end
 end
