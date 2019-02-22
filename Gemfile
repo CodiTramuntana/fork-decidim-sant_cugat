@@ -2,7 +2,9 @@ source "https://rubygems.org"
 
 ruby '2.5.3'
 
-gem "decidim", "~> 0.15.1"
+DECIDIM_VERSION = '~> 0.16.0'
+
+gem "decidim", DECIDIM_VERSION
 
 gem "virtus-multiparams"
 
@@ -12,7 +14,7 @@ gem "puma"
 
 group :development, :test do
   gem 'byebug', platform: :mri
-  gem "decidim-dev"
+  gem "decidim-dev", DECIDIM_VERSION
 end
 
 group :development do
