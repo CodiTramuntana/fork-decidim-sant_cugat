@@ -1,43 +1,45 @@
-source "https://rubygems.org"
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
 
 ruby '2.5.3'
 
 DECIDIM_VERSION = '~> 0.16.0'
 
-gem "decidim", DECIDIM_VERSION
+gem 'decidim', DECIDIM_VERSION
 
-gem "virtus-multiparams"
+gem 'virtus-multiparams'
 
-gem 'uglifier'
 gem 'faker'
-gem "puma"
+gem 'puma'
+gem 'uglifier'
 
 group :development, :test do
   gem 'byebug', platform: :mri
-  gem "decidim-dev", DECIDIM_VERSION
+  gem 'decidim-dev', DECIDIM_VERSION
 end
 
 group :development do
   gem 'listen'
   gem 'spring'
-  gem 'spring-watcher-listen'
   gem 'spring-commands-rspec'
+  gem 'spring-watcher-listen'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :production do
-  gem 'fog-aws'
   gem 'dalli'
-  gem 'sendgrid-ruby'
-  gem 'newrelic_rpm'
+  gem 'fog-aws'
   gem 'lograge'
+  gem 'newrelic_rpm'
+  gem 'sendgrid-ruby'
   gem 'sentry-raven'
   gem 'sidekiq'
 end
 
 group :test do
-  gem "rspec-rails"
-  gem "database_cleaner"
+  gem 'database_cleaner'
+  gem 'rspec-rails'
 end
