@@ -7,6 +7,7 @@ ruby '2.5.3'
 DECIDIM_VERSION = { git: 'https://github.com/decidim/decidim.git', branch: '0.18-stable' }
 
 gem 'decidim', DECIDIM_VERSION
+gem 'sprockets', '~> 3.7', '< 4'
 
 # A Decidim module to customize the localized terms in the system.
 # Read more: https://github.com/CodiTramuntana/decidim-module-term_customizer
