@@ -10,8 +10,8 @@ gem 'decidim', DECIDIM_VERSION
 gem 'sprockets', '~> 3.7', '< 4'
 
 # A Decidim module to customize the localized terms in the system.
-# Read more: https://github.com/CodiTramuntana/decidim-module-term_customizer
-gem "decidim-term_customizer", git: 'https://github.com/CodiTramuntana/decidim-module-term_customizer'
+# Read more: https://github.com/mainio/decidim-module-term_customizer
+gem "decidim-term_customizer", git: 'https://github.com/mainio/decidim-module-term_customizer'
 
 gem 'virtus-multiparams'
 
