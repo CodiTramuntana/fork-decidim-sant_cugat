@@ -42,6 +42,9 @@ group :production do
   gem 'sendgrid-ruby'
   gem 'sentry-raven'
   gem 'sidekiq'
+  gem 'fog-aws'
+  # security fix for excon gem, which is a fog-aws dependency
+  gem 'excon', '>= 0.71.0'
 end
 
 group :test do
