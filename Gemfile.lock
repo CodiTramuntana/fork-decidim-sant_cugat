@@ -790,12 +790,11 @@ DEPENDENCIES
   spring-commands-rspec
   spring-watcher-listen
   sprockets (~> 3.7, < 4)
-  tzinfo-data
   uglifier
   virtus-multiparams
 
 RUBY VERSION
-   ruby 2.5.3p105
+   ruby 2.6.5p114
 
 BUNDLED WITH
-   2.1.0.pre.3
+   2.1.1
