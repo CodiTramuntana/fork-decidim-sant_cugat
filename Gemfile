@@ -4,14 +4,14 @@ source 'https://rubygems.org'
 
 ruby '2.5.3'
 
-DECIDIM_VERSION = { git: 'https://github.com/decidim/decidim.git', branch: '0.18-stable' }
+DECIDIM_VERSION = { git: 'https://github.com/decidim/decidim.git', branch: '0.19-stable' }
 
 gem 'decidim', DECIDIM_VERSION
 gem 'sprockets', '~> 3.7', '< 4'
 
 # A Decidim module to customize the localized terms in the system.
-# Read more: https://github.com/CodiTramuntana/decidim-module-term_customizer
-gem "decidim-term_customizer"
+# Read more: https://github.com/mainio/decidim-module-term_customizer
+gem "decidim-term_customizer", git: 'https://github.com/mainio/decidim-module-term_customizer'
 
 gem 'virtus-multiparams'
 
@@ -42,6 +42,9 @@ group :production do
   gem 'sendgrid-ruby'
   gem 'sentry-raven'
   gem 'sidekiq'
+  gem 'fog-aws'
+  # security fix for excon gem, which is a fog-aws dependency
+  gem 'excon', '>= 0.71.0'
 end
 
 group :test do
