@@ -4,14 +4,14 @@ source 'https://rubygems.org'
 
 ruby '2.6.5'
 
-DECIDIM_VERSION = { git: 'https://github.com/decidim/decidim.git', branch: '0.19-stable' }
+DECIDIM_VERSION = { git: 'https://github.com/decidim/decidim.git' }
 
 gem 'decidim', DECIDIM_VERSION
 gem 'sprockets', '~> 3.7', '< 4'
 
 # A Decidim module to customize the localized terms in the system.
 # Read more: https://github.com/mainio/decidim-module-term_customizer
-gem "decidim-term_customizer", git: 'https://github.com/mainio/decidim-module-term_customizer'
+gem "decidim-term_customizer", git: 'https://github.com/CodiTramuntana/decidim-module-term_customizer'
 
 gem 'virtus-multiparams'
 
