@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 
 ruby '2.6.5'
 
-DECIDIM_VERSION = { git: 'https://github.com/decidim/decidim.git' }
+DECIDIM_VERSION = { git: 'https://github.com/decidim/decidim.git', branch: 'fix/data_portability_exporter' }
 
 gem 'decidim', DECIDIM_VERSION
 gem 'sprockets', '~> 3.7', '< 4'
